@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes aja</title>
+  </head>
+  <body>
+    <br />
+    <div>Input Kalimat : <input type="text" id="teks" /></div>
+    <div>Input Jumlah Perulangan : <input type="number" id="ulang" /></div>
+    <p>Hasil :</p>
+    <br />
+    <button onclick="For()">For</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+      function For() {
+        var tulisan = Number(document.getElementById("teks").value);
+        var jumlah = Number(document.getElementById("ulang").value);
+        var hasil;
+        for (i = 0; i < jumlah; i++) {
+          document.getElementById("output").innerHTML = hasil;
+        }
+      }
+    </script>
+  </body>
+</html>

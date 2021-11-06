@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengembangan Aplikasi Web Latihan 2.4</title>
+  </head>
+  <body>
+    <div id="output">
+      <h1 id="judul">Percabangan Switch</h1>
+      <p>
+        Silakan pilih warna text (Merah, Hijau, Biru, Kuning, Orange, Hitam,
+        Coklat) :
+      </p>
+      <input type="text" id="warna" />
+      <button onclick="gantiWarna()">Warna</button>
+    </div>
+    <script type="text/javascript">
+      function gantiWarna() {
+        var Input = document.getElementById("warna").value.toLowerCase();
+        var Warna = "white";
+        switch (Input) {
+          case "merah":
+            Warna = "red";
+            break;
+          case "hijau":
+            Warna = "green";
+            break;
+          case "biru":
+            Warna = "blue";
+            break;
+          case "kuning":
+            Warna = "yellow";
+            break;
+          case "orange":
+            Warna = "orange";
+            break;
+          case "hitam":
+            Warna = "black";
+            break;
+          case "coklat":
+            Warna = "brown";
+            break;
+          default:
+            break;
+        }
+        document.getElementById("judul").style.color = Warna;
+      }
+    </script>
+  </body>
+</html>
