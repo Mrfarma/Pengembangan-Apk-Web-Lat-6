@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import "./css/bootstrap.min.css";
-import Ref from "./Ref";
 import {
   BrowserRouter as Router,
   Link,
@@ -9,7 +8,6 @@ import {
   Switch,
   Redirect,
   withRouter,
-  NavLink,
 } from "react-router-dom";
 class App extends React.Component {
   constructor(props) {
@@ -45,66 +43,44 @@ class App extends React.Component {
       {
         path: "/",
         exact: true,
-        render: () => <div>Ini Halaman Home</div>,
+        render: () => <div>Ini adalah halaman Home</div>,
       },
       {
         path: "/news",
-        render: () => <div>Ini Halaman News</div>,
+        render: () => <div>Ini adalah halaman News</div>,
       },
       {
         path: "/login",
-        render: () => <LoginButton />,
+        render: () => (
+          <div>
+            <LoginButton />
+          </div>
+        ),
       },
       {
         path: "/profile",
         render: () =>
           this.state.isAuth ? (
             <div>
-              Ini Halaman Profile <br /> <LogoutButton />
+              Ini adalah halaman Profile <br /> <LogoutButton />
             </div>
           ) : (
             <Redirect to='/login' />
           ),
       },
-      {
-        path: "/ref",
-        render: () => (
-          <div>
-            <Ref />
-          </div>
-        ),
-      },
     ];
-
     return (
       <Router>
         <div>
           <ul style={{ listStyle: "none" }}>
             <li>
-              <NavLink
-                exact
-                activeStyle={{
-                  fontWeight: "bold",
-                  color: "red",
-                }}
-                to='/'>
-                Home
-              </NavLink>
+              <Link to='/'> Home</Link>
             </li>
             <li>
-              <NavLink activeClassName='active-link' to='/news'>
-                News
-              </NavLink>
+              <Link to='/news'> News</Link>
             </li>
             <li>
-              <NavLink activeClassName='active-link' to='/profile'>
-                Profile
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName='active-link' to='/Ref'>
-                Ref
-              </NavLink>
+              <Link to='/profile'> Profile</Link>
             </li>
           </ul>
 
