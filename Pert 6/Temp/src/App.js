@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import "./css/bootstrap.min.css";
+import Ref from "./Ref";
 import {
   BrowserRouter as Router,
   Link,
@@ -68,6 +69,14 @@ class App extends React.Component {
             <Redirect to='/login' />
           ),
       },
+      {
+        path: "/ref",
+        render: () => (
+          <div>
+            <Ref />
+          </div>
+        ),
+      },
     ];
     return (
       <Router>
@@ -81,6 +90,9 @@ class App extends React.Component {
             </li>
             <li>
               <Link to='/profile'> Profile</Link>
+            </li>
+            <li>
+              <Link to='/ref'> Ref</Link>
             </li>
           </ul>
 
